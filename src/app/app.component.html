@@ -1,3 +1,7 @@
+<div class="add">
+<input type="text" #newTodo (keyup.enter)="addTodo(newTodo.value); newTodo.value=''">
+</div>
+
 <div class="example-container">
   <h2>To do</h2>
 
@@ -7,7 +11,7 @@
        [cdkDropListData]="todoTask"
        [cdkDropListConnectedTo]="[wipList, doneList]"
        (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of todoTask" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of todoTask" cdkDrag>{{item}}<button click="deleteTodo()" class="close">&times;</button></div>
   </div>
 </div>
 
@@ -20,7 +24,7 @@
        [cdkDropListData]="wipTask"
        [cdkDropListConnectedTo]="[todoList, doneList]"
        (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of wipTask" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of wipTask" cdkDrag>{{item}}<button click="delete()" class="close">&times;</button></div>
   </div>
 </div>
 
@@ -33,6 +37,6 @@
        [cdkDropListData]="doneTask"
        [cdkDropListConnectedTo]="[todoList, wipList]"
        (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of doneTask" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of doneTask" cdkDrag>{{item}}<span class="close">&times;</span></div>
   </div>
 </div>

@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'my-todo-app';
   todoTask = [
     'Repasser mes chaussettes',
-    'Faire la vaisselle'
   ];
 
   wipTask = [
@@ -23,6 +22,14 @@ export class AppComponent {
     'boire boire boire'
   ];
 
+  addTodo(newTodo) {
+    this.todoTask.push(newTodo);
+  }
+
+  deleteTodo() {
+    this.todoTask.splice(this.todoTask.length-1, 1);
+  }
+  
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
