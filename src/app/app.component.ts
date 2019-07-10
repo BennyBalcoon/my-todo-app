@@ -29,6 +29,12 @@ export class AppComponent {
   deleteTodo() {
     this.todoTask.splice(this.todoTask.length-1, 1);
   }
+  deleteWip() {
+    this.wipTask.splice(this.wipTask.length-1, 1);
+  }
+  deleteDone() {
+    this.doneTask.splice(this.doneTask.length-1, 1);
+  }
   
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

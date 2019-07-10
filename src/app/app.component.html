@@ -25,7 +25,7 @@
        [cdkDropListData]="wipTask"
        [cdkDropListConnectedTo]="[todoList, doneList]"
        (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of wipTask" cdkDrag>{{item}}<button click="delete()" class="close">&times;</button></div>
+    <div class="example-box" *ngFor="let item of wipTask" cdkDrag>{{item}}<button (click)="deleteWip()" class="close">&times;</button></div>
   </div>
 </div>
 
@@ -38,6 +38,6 @@
        [cdkDropListData]="doneTask"
        [cdkDropListConnectedTo]="[todoList, wipList]"
        (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of doneTask" cdkDrag>{{item}}<button click="delete()" class="close">&times;</button></div>
+    <div class="example-box" *ngFor="let item of doneTask" cdkDrag>{{item}}<button (click)="deleteDone()" class="close">&times;</button></div>
   </div>
 </div>
