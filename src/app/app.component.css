@@ -5,6 +5,10 @@
   background-color: #44BAFB;
 }
 
+.title {
+  font-weight: bold;
+}
+
 input {
   height: 50px;
   width: 400px;
